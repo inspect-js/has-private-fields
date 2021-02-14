@@ -10,7 +10,9 @@
 	"scripts": {
 		"lint": "eslint --ext=.js,.mjs .",
 		"pretest": "npm run lint",
-		"test": "echo \"Error: no test specified\" && exit 1"
+		"tests-only": "nyc tape 'test/**/*.js'",
+		"test": "npm run tests-only",
+		"posttest": "aud --production"
 	},
 	"repository": {
 		"type": "git",
@@ -33,7 +35,11 @@
 	"homepage": "https://github.com/inspect-js/has-private-fields#readme",
 	"devDependencies": {
 		"@ljharb/eslint-config": "^17.5.1",
-		"eslint": "^7.20.0"
+		"aud": "^1.1.4",
+		"eslint": "^7.20.0",
+		"nyc": "^10.3.2",
+		"semver": "^6.3.0",
+		"tape": "^5.1.1"
 	},
 	"engines": {
 		"node": ">= 0.4"
