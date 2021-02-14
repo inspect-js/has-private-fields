@@ -4,7 +4,7 @@
 	"description": "Determine if the JS environment has private fields (`class { #x; }`) support.",
 	"main": "index.js",
 	"exports": {
-		"./index.js": "./index.js",
+		".": "./index.js",
 		"./package.json": "./package.json"
 	},
 	"scripts": {
