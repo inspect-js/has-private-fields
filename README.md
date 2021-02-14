@@ -12,9 +12,15 @@ Determine if the JS environment has private fields (`class { #x; }`) support.
 ## Example
 
 ```js
-var hasPrivateFields = require('has-private-fields');
+const assert = require('assert');
+const hasPrivateFields = require('has-private-fields');
 
-hasPrivateFields() === true; // if the environment has native class private fields support
+assert.equal(hasPrivateFields(), true); // if the environment has native class private fields support
+
+const { hasPrivateAccessors, hasPrivateMethods } = hasPrivateFields;
+
+assert.equal(hasPrivateAccessors(), true); // if the environment has native class private accessors support
+assert.equal(hasPrivateMethods(), true); // if the environment has native class private methods support
 ```
 
 ## Tests
