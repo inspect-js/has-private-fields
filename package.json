@@ -1,6 +1,6 @@
 {
 	"name": "has-private-fields",
-	"version": "0.0.0",
+	"version": "1.0.0",
 	"description": "Determine if the JS environment has private fields (`class { #x; }`) support.",
 	"main": "index.js",
 	"exports": {
