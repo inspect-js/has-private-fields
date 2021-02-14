@@ -34,5 +34,8 @@
 	"devDependencies": {
 		"@ljharb/eslint-config": "^17.5.1",
 		"eslint": "^7.20.0"
+	},
+	"engines": {
+		"node": ">= 0.4"
 	}
 }
