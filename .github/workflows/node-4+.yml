@@ -12,16 +12,22 @@ jobs:
       - uses: ljharb/actions/node/matrix@main
         id: set-matrix
         with:
+          versionsAsRoot: true
           preset: '>=4'
 
   latest:
     needs: [matrix]
-    name: 'latest minors'
+    name: 'latest/notable minors'
     runs-on: ubuntu-latest
 
     strategy:
       fail-fast: false
-      matrix: ${{ fromJson(needs.matrix.outputs.latest) }}
+      matrix:
+        node-version: ${{ fromJson(needs.matrix.outputs.latest) }}
+        include:
+          - node-version: 14.6 # first version with accessors/methods
+          - node-version: 12.0 # first version with private fields
+          - node-version: 11.15 # last version without private fields
 
     steps:
       - uses: actions/checkout@v2
@@ -41,7 +47,12 @@ jobs:
 
     strategy:
       fail-fast: false
-      matrix: ${{ fromJson(needs.matrix.outputs.minors) }}
+      matrix:
+        node-version: ${{ fromJson(needs.matrix.outputs.minors) }}
+        exclude:
+          - node-version: 14.6 # tested above
+          - node-version: 12.0 # tested above
+          - node-version: 11.15 # tested above
 
     steps:
       - uses: actions/checkout@v2
