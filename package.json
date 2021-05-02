@@ -41,14 +41,14 @@
 	},
 	"homepage": "https://github.com/inspect-js/has-private-fields#readme",
 	"devDependencies": {
-		"@ljharb/eslint-config": "^17.5.1",
-		"aud": "^1.1.4",
+		"@ljharb/eslint-config": "^17.6.0",
+		"aud": "^1.1.5",
 		"auto-changelog": "^2.2.1",
-		"eslint": "^7.20.0",
+		"eslint": "^7.25.0",
 		"nyc": "^10.3.2",
 		"safe-publish-latest": "^1.1.4",
 		"semver": "^6.3.0",
-		"tape": "^5.1.1"
+		"tape": "^5.2.2"
 	},
 	"engines": {
 		"node": ">= 0.4"
