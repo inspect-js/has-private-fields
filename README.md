@@ -15,12 +15,12 @@ Determine if the JS environment has private fields (`class { #x; }`) support.
 const assert = require('assert');
 const hasPrivateFields = require('has-private-fields');
 
-assert.equal(hasPrivateFields(), true); // if the environment has native class private fields support
+assert.equal(hasPrivateFields(), true); // if the environment has native class private fields support (node v12+)
 
 const { hasPrivateAccessors, hasPrivateMethods } = hasPrivateFields;
 
-assert.equal(hasPrivateAccessors(), true); // if the environment has native class private accessors support
-assert.equal(hasPrivateMethods(), true); // if the environment has native class private methods support
+assert.equal(hasPrivateAccessors(), true); // if the environment has native class private accessors support (node v14.6+)
+assert.equal(hasPrivateMethods(), true); // if the environment has native class private methods support (node v14.6+)
 ```
 
 ## Tests
@@ -32,8 +32,6 @@ Simply clone the repo, `npm install`, and run `npm test`
 [6]: https://david-dm.org/inspect-js/has-private-fields
 [7]: https://david-dm.org/inspect-js/has-private-fields/dev-status.svg
 [8]: https://david-dm.org/inspect-js/has-private-fields#info=devDependencies
-[9]: https://ci.testling.com/inspect-js/has-private-fields.png
-[10]: https://ci.testling.com/inspect-js/has-private-fields
 [11]: https://nodei.co/npm/has-private-fields.png?downloads=true&stars=true
 [license-image]: https://img.shields.io/npm/l/has-private-fields.svg
 [license-url]: LICENSE
