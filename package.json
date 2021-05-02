@@ -8,6 +8,8 @@
 		"./package.json": "./package.json"
 	},
 	"scripts": {
+		"prepublishOnly": "safe-publish-latest",
+		"prepublish": "not-in-publish || npm run prepublishOnly",
 		"lint": "eslint --ext=.js,.mjs .",
 		"pretest": "npm run lint",
 		"tests-only": "nyc tape 'test/**/*.js'",
@@ -44,6 +46,7 @@
 		"auto-changelog": "^2.2.1",
 		"eslint": "^7.20.0",
 		"nyc": "^10.3.2",
+		"safe-publish-latest": "^1.1.4",
 		"semver": "^6.3.0",
 		"tape": "^5.1.1"
 	},
